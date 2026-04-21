@@ -9,12 +9,22 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
+      # 🔥 ADD THIS (Flutter setup)
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'   # or your version
+
+      - run: flutter pub get
+
       - run: flutter build web
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAHULKUSHWAHA_COM_NP }}
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAHULKUSHWAHA_COM_NP }}"
           channelId: live
           projectId: rahulkushwaha-com-np
