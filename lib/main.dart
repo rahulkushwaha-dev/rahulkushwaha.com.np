@@ -15,14 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Center(child: Column(
-        children: [
-          Text('Rahul Kushwaha'),
-          Text('Rahul Kushwaha'),
-          Text('In progress'),
-
-        ],
-      ),),
+      home: Center(child: Text('Rahul Kushwaha'),),
     );
   }
 }
