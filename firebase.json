@@ -1,15 +1,23 @@
 {
   "hosting": {
     "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "**",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.rahulkushwaha.com.np"
+          }
+        ],
+        "destination": "https://rahulkushwaha.com.np",
+        "type": 301
       }
     ]
   }

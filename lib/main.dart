@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rahulkushwaha_com_np/portfolio_screen.dart';
+import 'package:rahulkushwaha_com_np/widgets/project.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Center(child: Text('Rahul Kushwaha'),),
+      home: AnimatedPortfolioPage(),
     );
   }
 }
