@@ -1,23 +1,26 @@
 {
   "hosting": {
     "public": "build/web",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+
     "redirects": [
       {
-        "source": "**",
+        "source": "/**",
         "has": [
           {
             "type": "host",
             "value": "www.rahulkushwaha.com.np"
           }
         ],
-        "destination": "https://rahulkushwaha.com.np",
+        "destination": "https://rahulkushwaha.com.np/:splat",
         "type": 301
+      }
+    ],
+
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
